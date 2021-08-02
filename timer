@@ -1,6 +1,9 @@
+# set this to desired output
 destdir=/home/martin/Desktop/42_work_log.txt
 
 echo $(date +"%x %X:") $@ >> "$destdir"
 
 echo "Pomodoro Timer" ;
+
+# set time in seconds per rush
 for i in `seq 3300 -1 1` ; do echo -ne "\r$i " ; sleep 1 ; done
