@@ -10,7 +10,7 @@ else
         duration=$3
 
         echo "... tracking you time: " ;
-        for i in `seq $3 -1 1` ; do echo -ne "\r$i " ; echo "" ; sleep 1 ; done
-
+        for i in `seq $3 -1 1` ; do echo -ne "\r$i " ; sleep 1 ; done
+	echo""
         echo $(date +"%x %X:") $@ >> "$destdir"
 fi
