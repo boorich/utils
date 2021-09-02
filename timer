@@ -1,16 +1,15 @@
-#!/bin/bash
-
-# set this to desired output
-if [ "$1" = "-h" ]
+if [ "$1" = "-h" ] 
 then
     echo "Usage: [customer] [task] [seconds]";
 else
-	#set this to deired output
-        destdir=/home/martin/Desktop/work_log.txt
-        duration=$3
+	destdir=/home/martin/Desktop/work_log.txt
+	duration=$3
+	input=$@
 
-        echo "... tracking you time: " ;
-        for i in `seq $3 -1 1` ; do echo -ne "\r$i " ; sleep 1 ; done
-	echo""
-        echo $(date +"%x %X:") $@ >> "$destdir"
+	echo "... tracking you time: " ;
+	for i in `seq $3 -1 1` ; do echo -ne "\r$i " ; sleep 1 ; done
+	echo ""
+
+	echo $(date +"%x %X:") $@ >> "$destdir"
+	spd-say "times up for '$2'"
 fi
